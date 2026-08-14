@@ -1,3 +1,22 @@
+/*
+ * Font Name: Montserrat
+ * Source: https://github.com/JulietaUla/Montserrat
+ * Author: Julieta Ulanovsky (julieta.ulanovsky@gmail.com), Jacques Le Bailly (fonthausen@baronvonfonthausen.com),
+ *         Juan Pablo del Peral (juandelperal@gmail.com), Sol Matas (solmatas@gmail.com)
+ * Contributors: https://github.com/JulietaUla/Montserrat/graphs/contributors?all=1
+ * License: SIL Open Font License 1.1
+*/
+/*
+ * Font Name: Fraunces
+ * Source: https://github.com/undercasetype/Fraunces
+ * Author: Undercase Type (info@undercase.xyz), Phaedra Charles (phaedra@undercase.xyz), Flavia Zimbardi (flaviazim@gmail.com)
+ * Contributors: https://github.com/undercasetype/Fraunces/graphs/contributors?all=1
+ * License: SIL Open Font License 1.1
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
+
 *,
 *::before,
 *::after {
