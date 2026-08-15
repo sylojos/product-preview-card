@@ -39,6 +39,14 @@
   --line-height-sm: 22;
   --line-height-md: 32;
 
+  --spacing-12: calc(12 / 16 * 1rem);
+  --spacing-14: calc(14 / 16 * 1rem);
+  --spacing-16: calc(16 / 16 * 1rem);
+  --spacing-22: calc(22 / 16 * 1rem);
+  --spacing-24: calc(24 / 16 * 1rem);
+  --spacing-30: calc(30 / 16 * 1rem);
+  --spacing-32: calc(32 / 16 * 1rem);
+
   --c-text-title: var(--color-black);
   --c-text-description: var(--color-grey);
   --c-text-category: var(--color-grey);
@@ -78,6 +86,22 @@
   --lh-description: calc(
     var(--line-height-sm) / var(--fs-description-unitless)
   );
+
+  --gap-price-group: var(--spacing-16);
+
+  --pd-content-top: var(--spacing-30);
+  --pd-content-left: var(--spacing-32);
+  --pd-content-right: var(--spacing-32);
+  --pd-button-top-btm: var(--spacing-14);
+
+  --m-product-card: var(--spacing-12);
+  --m-category-btm: var(--spacing-22);
+  --m-title-btm: var(--spacing-24);
+  --m-description-btm: var(--spacing-16);
+  --m-button-top: var(--spacing-16);
+  --m-button-btm: var(--spacing-32);
+  --m-button-left: var(--spacing-32);
+  --m-button-right: var(--spacing-32);
 }
 
 *,
@@ -93,6 +117,9 @@
 body {
   line-height: 1.5;
   font-family: var(--ff-secondary);
+  min-height: 100vh;
+  min-height: 100dvh;
+  min-block-size: 100dvb;
 }
 
 img,
@@ -131,11 +158,27 @@ h6 {
   text-wrap: balance;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product {
+  margin: var(--m-product-card);
+}
+
+.product__content {
+  padding-block: var(--pd-content-top) 0;
+  padding-inline: var(--pd-content-left) var(--pd-content-right);
+}
+
 .product__category {
   font-size: var(--fs-category);
   font-weight: var(--fw-category);
   letter-spacing: var(--ls-category);
   color: var(--c-text-category);
+  margin-block-end: var(--m-category-btm);
 }
 
 .product__category--uppercase {
@@ -148,6 +191,7 @@ h6 {
   font-weight: var(--fw-title);
   line-height: var(--lh-title);
   color: var(--c-text-title);
+  margin-block-end: var(--m-title-btm);
 }
 
 .product__description {
@@ -155,6 +199,13 @@ h6 {
   font-weight: var(--fw-description);
   line-height: var(--lh-description);
   color: var(--c-text-description);
+  margin-block-end: var(--m-description-btm);
+}
+
+.product__price-group {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-price-group);
 }
 
 .product__discounted-price {
@@ -179,4 +230,8 @@ h6 {
   font-size: var(--fs-text-button);
   font-weight: var(--fw-text-button);
   color: var(--c-text-button);
+  margin-block: var(--m-button-top) var(--m-button-btm);
+  margin-inline: var(--m-button-left) var(--m-button-right);
+  inline-size: calc(100% - (var(--m-button-left) + var(--m-button-right)));
+  padding-block: var(--pd-button-top-btm);
 }
