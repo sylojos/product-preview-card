@@ -17,6 +17,69 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap");
 
+:root {
+  --color-white: oklch(100% 0.00011 271.152);
+  --color-black: oklch(25.286% 0.0183 252);
+  --color-grey: oklch(55.533% 0.0365 273.676);
+  --color-green-500: oklch(54.804% 0.08028 166.993);
+
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-fraunces: "Fraunces", serif;
+
+  --fs-12: calc(12 / 16 * 1rem);
+  --fs-14: calc(14 / 16 * 1rem);
+  --fs-32: calc(32 / 16 * 1rem);
+
+  --fw-bold: 700;
+  --fw-medium: 500;
+
+  --letter-spacing-5pc: calc(5 * 0.01em);
+  --letter-spacing-42pc: calc(42 * 0.01em);
+
+  --line-height-sm: 22;
+  --line-height-md: 32;
+
+  --c-text-title: var(--color-black);
+  --c-text-description: var(--color-grey);
+  --c-text-category: var(--color-grey);
+  --c-text-price-primary: var(--color-green-500);
+  --c-text-price-secondary: var(--color-grey);
+  --c-text-button: var(--color-white);
+
+  --ff-primary: var(--font-fraunces);
+  --ff-secondary: var(--font-montserrat);
+
+  --fs-title-unitless: 32;
+  --fs-description-unitless: 14;
+
+  --fs-title: var(--fs-32);
+  --fs-description: var(--fs-14);
+  --fs-category: var(--fs-12);
+  --fs-price-primary: var(--fs-32);
+  --fs-price-secondary: var(--fs-12);
+  --fs-text-button: var(--fs-14);
+
+  --fw-title: var(--fw-bold);
+  --fw-description: var(--fw-medium);
+  --fw-category: var(--fw-medium);
+  --fw-price-primary: var(--fw-bold);
+  --fw-price-secondary: var(--fw-medium);
+  --fw-text-button: var(--fw-bold);
+
+  --ls-category: var(--letter-spacing-42pc);
+  --ls-price-secondary: var(--letter-spacing-5pc);
+
+  /* 
+    Dividing two values with matching units is valid. For example, calc(32px / 32px) should return a unitless value of 1.
+    However, it does not works in FireFox browser (tested with version 153.0.4 Windows 11), it works on both Microsoft Edge
+    and Google Chrome browsers.
+  */
+  --lh-title: calc(var(--line-height-md) / var(--fs-title-unitless));
+  --lh-description: calc(
+    var(--line-height-sm) / var(--fs-description-unitless)
+  );
+}
+
 *,
 *::before,
 *::after {
@@ -29,6 +92,7 @@
 
 body {
   line-height: 1.5;
+  font-family: var(--ff-secondary);
 }
 
 img,
@@ -65,4 +129,54 @@ h4,
 h5,
 h6 {
   text-wrap: balance;
+}
+
+.product__category {
+  font-size: var(--fs-category);
+  font-weight: var(--fw-category);
+  letter-spacing: var(--ls-category);
+  color: var(--c-text-category);
+}
+
+.product__category--uppercase {
+  text-transform: uppercase;
+}
+
+.product__title {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-title);
+  font-weight: var(--fw-title);
+  line-height: var(--lh-title);
+  color: var(--c-text-title);
+}
+
+.product__description {
+  font-size: var(--fs-description);
+  font-weight: var(--fw-description);
+  line-height: var(--lh-description);
+  color: var(--c-text-description);
+}
+
+.product__discounted-price {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-price-primary);
+  font-weight: var(--fw-price-primary);
+  color: var(--c-text-price-primary);
+}
+
+.product__original-price {
+  font-size: var(--fs-price-secondary);
+  font-weight: var(--fw-price-secondary);
+  letter-spacing: var(--ls-price-secondary);
+  color: var(--c-text-price-secondary);
+}
+
+.product__original-price--strike {
+  text-decoration: line-through;
+}
+
+.button {
+  font-size: var(--fs-text-button);
+  font-weight: var(--fw-text-button);
+  color: var(--c-text-button);
 }
