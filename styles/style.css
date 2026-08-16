@@ -22,6 +22,7 @@
   --color-black: oklch(25.286% 0.0183 252);
   --color-grey: oklch(55.533% 0.0365 273.676);
   --color-green-500: oklch(54.804% 0.08028 166.993);
+  --color-green-700: oklch(34.277% 0.05043 166.915);
 
   --font-montserrat: "Montserrat", sans-serif;
   --font-fraunces: "Fraunces", serif;
@@ -57,6 +58,7 @@
   --c-text-price-secondary: var(--color-grey);
   --c-text-button: var(--color-white);
   --c-button-bg: var(--color-green-500);
+  --c-button-bg-hover: var(--color-green-700);
 
   --ff-primary: var(--font-fraunces);
   --ff-secondary: var(--font-montserrat);
@@ -263,4 +265,14 @@ h6 {
   /* Remove the width and height attributes in the svg icon and add viewBox="0 0 15 16" attribute to make the icon responsive to font size,  */
   inline-size: calc((var(--width-icon) / var(--fs-text-button-unitless)) * 1em);
   block-size: calc((var(--height-icon) / var(--fs-text-button-unitless)) * 1em);
+}
+
+.button:is(:hover, :focus) {
+  background-color: var(--c-button-bg-hover);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .button {
+    transition: background-color 0.2s linear;
+  }
 }
