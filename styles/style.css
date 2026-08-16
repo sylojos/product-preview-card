@@ -19,6 +19,7 @@
 
 :root {
   --color-white: oklch(100% 0.00011 271.152);
+  --color-cream: oklch(94.333% 0.01302 71.174);
   --color-black: oklch(25.286% 0.0183 252);
   --color-grey: oklch(55.533% 0.0365 273.676);
   --color-green-500: oklch(54.804% 0.08028 166.993);
@@ -59,6 +60,8 @@
   --c-text-button: var(--color-white);
   --c-button-bg: var(--color-green-500);
   --c-button-bg-hover: var(--color-green-700);
+  --c-container-bg: var(--color-white);
+  --c-body-bg: var(--color-cream);
 
   --ff-primary: var(--font-fraunces);
   --ff-secondary: var(--font-montserrat);
@@ -133,6 +136,7 @@ body {
   min-height: 100vh;
   min-height: 100dvh;
   min-block-size: 100dvb;
+  background-color: var(--c-body-bg);
 }
 
 img,
@@ -179,6 +183,10 @@ h6 {
 
 .product {
   margin: var(--m-product-card);
+}
+
+.product__container {
+  background-color: var(--c-container-bg);
 }
 
 .product__content {
