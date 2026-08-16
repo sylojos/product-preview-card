@@ -39,6 +39,7 @@
   --line-height-sm: 22;
   --line-height-md: 32;
 
+  --spacing-10: calc(10 / 16 * 1rem);
   --spacing-12: calc(12 / 16 * 1rem);
   --spacing-14: calc(14 / 16 * 1rem);
   --spacing-16: calc(16 / 16 * 1rem);
@@ -59,6 +60,7 @@
 
   --fs-title-unitless: 32;
   --fs-description-unitless: 14;
+  --fs-text-button-unitless: 14;
 
   --fs-title: var(--fs-32);
   --fs-description: var(--fs-14);
@@ -88,6 +90,7 @@
   );
 
   --gap-price-group: var(--spacing-16);
+  --gap-button-icon: var(--spacing-10);
 
   --pd-content-top: var(--spacing-30);
   --pd-content-left: var(--spacing-32);
@@ -102,6 +105,9 @@
   --m-button-btm: var(--spacing-32);
   --m-button-left: var(--spacing-32);
   --m-button-right: var(--spacing-32);
+
+  --width-icon: 15;
+  --height-icon: 16;
 }
 
 *,
@@ -234,4 +240,18 @@ h6 {
   margin-inline: var(--m-button-left) var(--m-button-right);
   inline-size: calc(100% - (var(--m-button-left) + var(--m-button-right)));
   padding-block: var(--pd-button-top-btm);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-button-icon);
+}
+
+.button::before {
+  content: "";
+  background-image: url(../images/icon-cart.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  /* Remove the width and height attributes in the svg icon and add viewBox="0 0 15 16" attribute to make the icon responsive to font size,  */
+  inline-size: calc((var(--width-icon) / var(--fs-text-button-unitless)) * 1em);
+  block-size: calc((var(--height-icon) / var(--fs-text-button-unitless)) * 1em);
 }
