@@ -48,12 +48,15 @@
   --spacing-30: calc(30 / 16 * 1rem);
   --spacing-32: calc(32 / 16 * 1rem);
 
+  --radius-8: calc(8 / 16 * 1rem);
+
   --c-text-title: var(--color-black);
   --c-text-description: var(--color-grey);
   --c-text-category: var(--color-grey);
   --c-text-price-primary: var(--color-green-500);
   --c-text-price-secondary: var(--color-grey);
   --c-text-button: var(--color-white);
+  --c-button-bg: var(--color-green-500);
 
   --ff-primary: var(--font-fraunces);
   --ff-secondary: var(--font-montserrat);
@@ -105,6 +108,8 @@
   --m-button-btm: var(--spacing-32);
   --m-button-left: var(--spacing-32);
   --m-button-right: var(--spacing-32);
+
+  --r-button: var(--radius-8);
 
   --width-icon: 15;
   --height-icon: 16;
@@ -244,6 +249,10 @@ h6 {
   justify-content: center;
   align-items: center;
   gap: var(--gap-button-icon);
+  border: 0;
+  border-radius: var(--r-button);
+  cursor: pointer;
+  background-color: var(--c-button-bg);
 }
 
 .button::before {
