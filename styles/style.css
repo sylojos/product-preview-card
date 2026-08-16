@@ -50,6 +50,7 @@
   --spacing-30: calc(30 / 16 * 1rem);
   --spacing-32: calc(32 / 16 * 1rem);
 
+  --radius-6: calc(6 / 16 * 1rem);
   --radius-8: calc(8 / 16 * 1rem);
 
   --c-text-title: var(--color-black);
@@ -114,6 +115,7 @@
   --m-button-left: var(--spacing-32);
   --m-button-right: var(--spacing-32);
 
+  --r-container: var(--radius-6);
   --r-button: var(--radius-8);
 
   --width-icon: 15;
@@ -187,6 +189,8 @@ h6 {
 
 .product__container {
   background-color: var(--c-container-bg);
+  border-radius: var(--r-container);
+  overflow: hidden;
 }
 
 .product__content {
