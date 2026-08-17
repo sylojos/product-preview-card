@@ -251,6 +251,36 @@ h6 {
   text-decoration: line-through;
 }
 
+:is(.product__discounted-price, .product__original-price)::before,
+.product__original-price::after {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+}
+
+/*
+  Beware, some screen reader users deliberately disable announcing content,
+  a better alternative is use visually hidden <span> element to provide context
+*/
+.product__discounted-price::before {
+  content: "Discounted price: ";
+}
+
+.product__original-price::before {
+  content: "Original price: [start of stricken text] ";
+}
+
+.product__original-price::after {
+  content: " [end of stricken text] ";
+}
+
 .button {
   font-size: var(--fs-text-button);
   font-weight: var(--fw-text-button);
